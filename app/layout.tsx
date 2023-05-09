@@ -11,7 +11,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" data-theme='corporate'>
+    <html lang="en" data-theme='emerald'>
       <body className={`${inter.className} max-w-screen overflow-x-hidden`}>
         <NavigationProvider />
         {children}
