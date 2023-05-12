@@ -13,12 +13,11 @@ interface IDay {
 export default function DayCard({ day }: { day: IDay }) {
   const { hours, classes, day: day_label } = day
   return (
-    <div className='w-96 bg-base-100 p-4 border-black border-8 text-black rounded-2xl mx-auto shadow-lg dark:shadow-none'>
-      <div className='grid justify-items-center relative  p-2'>
+    <div className='w-96 bg-base-100 p-4 border-black border-4 text-black rounded-2xl mx-auto shadow-lg dark:shadow-none'>
+      <div className='grid relative border-b border-black'>
         <h1 className='text-3xl font-bold '>{day_label}</h1>
         <h4 className='text-md font-bold'> {hours}</h4>
       </div>
-      <hr className='my-4' />
       <Classes classes={classes} />
     </div>
   )
@@ -35,7 +34,7 @@ const Classes = ({ classes }: { classes: IClass[] | [] }) => {
     )
   }
   return (
-    <div className='grid gap-4 px-8'>
+    <div className='grid gap-4 py-4'>
       {classes.map(({ name, time, instructors }, index) => (
         <div key={String(name + index)} className='flex flex-col justify-center '>
           <h1 className=' font-bold'>{name} w/ {instructors.join(' & ')}</h1>

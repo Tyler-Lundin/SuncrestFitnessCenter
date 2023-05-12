@@ -1,12 +1,14 @@
 import { BsFacebook, BsInstagram } from "react-icons/bs";
+import { AiOutlineClose } from "react-icons/ai";
 import NavLinks from "./NavLinks";
 import LogoSmall from "../LogoSmall";
 
 export default function NavSideDrawer({ isOpen, toggleNav }: { isOpen: boolean, toggleNav: () => void }) {
 
   return (
-    <div className={`w-80 lg:hidden h-screen transition-all ease-in-out duration-300 fixed ${isOpen ? 'left-0' : '-left-full'} z-50`}>
+    <div className={`w-screen lg:hidden h-screen transition-all ease-in-out duration-300 fixed ${isOpen ? 'left-0' : '-left-80'} z-50`}>
       <ul className="menu p-8 w-80 h-full bg-base-100 text-4xl flex flex-col gap-6 relative">
+        <AiOutlineClose className="absolute right-8 h-8 w-8 cursor-pointer z-50" onClick={toggleNav} />
         <button onClick={toggleNav} >
           <LogoSmall />
         </button>

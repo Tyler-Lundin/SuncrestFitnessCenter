@@ -19,7 +19,7 @@ export default function AboutPage() {
     <Page>
       <ImageCarousel />
       <TitledContainer title='About Us' />
-      <div className='grid gap-4 w-fit px-8 lg:px-16 pb-16 max-w-2xl'>
+      <div className='grid gap-4 w-fit px-6 lg:px-16 pb-16 max-w-2xl'>
         {paragraphs.map((paragraph, index) => (
           <p key={index} className={'text-black font-light text-md sm:text-xl  '}>
             {paragraph}

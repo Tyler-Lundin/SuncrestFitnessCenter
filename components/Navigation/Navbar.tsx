@@ -1,6 +1,4 @@
 'use client';
-import Link from "next/link";
-import { BsFacebook, BsInstagram } from 'react-icons/bs';
 import LogoSmall from "../LogoSmall";
 import NavLinks from "./NavLinks";
 
@@ -9,7 +7,7 @@ import NavLinks from "./NavLinks";
 const Navbar = ({ toggleNav }: { toggleNav: () => void }) => {
 
   return (
-    <div className="w-full navbar bg-base-100/70 backdrop-blur-md border-b border-black fixed z-50">
+    <div className="w-full h-16 flex items-center px-2 md:px-4 lg:px-6 bg-base-100/70 backdrop-blur-md border-b border-black fixed z-50">
       <div className="flex-1 px-2 mx-auto ">
         <LogoSmall />
       </div>

@@ -5,7 +5,7 @@ const { address, phone, email, fax } = CONTACT;
 export default function AdditionalContactInfo() {
 
   return (
-    <div className='mx-auto max-w-4xl p-8 bg-base-100 rounded-lg md:border-8 md:border-black'>
+    <div className='mx-auto max-w-4xl p-8 bg-base-100 rounded-lg md:border-4 md:border-black'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         <div className='flex flex-col justify-center items-center'>
           <h2 className='text-xl font-bold'>Address</h2>
