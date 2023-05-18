@@ -10,13 +10,13 @@ export default async function Footer() {
   return (
     <Providers>
       <footer className={"w-full h-fit py-8 text-center bg-black flex flex-col gap-4 items-center justify-center"}>
-        <p className="text-sm text-gray-300 ">
-          © {YEAR} Suncrest Fitness Center. All rights reserved.
-        </p>
 
         <FooterLinks user={session?.user} />
-        <p className="text-sm text-gray-300">
-          Created by <a href="https://www.tylerlundin.me" target="_blank" rel="noreferrer">Tyler Lundin</a>
+        <p className="text-xs text-gray-300 ">
+          © {YEAR} Suncrest Fitness Center. <br /> All rights reserved.
+        </p>
+        <p className="text-xs text-gray-400">
+          Created with ♡ by <a href="https://www.tylerlundin.me" target="_blank" rel="noreferrer" >Tyler Lundin</a>
         </p>
       </footer>
     </Providers>

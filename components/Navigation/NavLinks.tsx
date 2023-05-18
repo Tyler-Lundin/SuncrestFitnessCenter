@@ -22,6 +22,7 @@ export default function NavLinks() {
       {
         LINKS.map(link => (
           <Link
+            tabIndex={0}
             onClick={closeNav}
             className={`${link.href === '/' ? 'hover:font-black font-light' : pathname.startsWith(link.href) ? 'font-black hover:font-light' : 'hover:font-black font-light'} text-xl transition-all ease-in-out duration-300 `}
             key={`${link.label}-link`} href={link.href}

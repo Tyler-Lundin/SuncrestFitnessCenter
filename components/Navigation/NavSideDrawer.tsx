@@ -3,13 +3,13 @@ import { AiOutlineClose } from "react-icons/ai";
 import NavLinks from "./NavLinks";
 import LogoSmall from "../LogoSmall";
 
-export default function NavSideDrawer({ isOpen, toggleNav }: { isOpen: boolean, toggleNav: () => void }) {
+export default function NavSideDrawer({ isOpen, closeNav }: { isOpen: boolean, closeNav: () => void }) {
 
   return (
-    <div aria-label="navigation drawer" className={`w-80 lg:hidden h-screen transition-all ease-in-out duration-300 fixed ${isOpen ? 'left-0' : '-left-80'} z-50`}>
-      <ul className="menu p-8 w-80 h-full bg-base-100 text-4xl flex flex-col gap-6 relative">
-        <AiOutlineClose className="absolute right-8 h-8 w-8 cursor-pointer z-50" onClick={toggleNav} />
-        <button onClick={toggleNav} >
+    <div aria-label="navigation drawer" className={`w-screen max-w-xs max-h-screen lg:hidden h-screen transition-all ease-in-out duration-300 fixed ${isOpen ? 'left-0' : '-left-80'} z-50`}>
+      <ul className="menu p-8 w-full h-full bg-base-100 text-4xl flex flex-col gap-6 relative">
+        <AiOutlineClose className="absolute right-8 h-8 w-8 cursor-pointer z-50" onClick={closeNav} />
+        <button disabled={!isOpen} onClick={closeNav} >
           <LogoSmall />
         </button>
         <NavLinks />
@@ -22,7 +22,7 @@ export default function NavSideDrawer({ isOpen, toggleNav }: { isOpen: boolean, 
               <BsInstagram className="h-8 w-8" />
             </a>
           </div>
-          <a href="tel:1-905-426-7447" className="text-xl font-light">509-465-0131</a>
+          <a href="tel:1-509-465-0131" className="text-xl font-light">509-465-0131</a>
         </div>
       </ul>
     </div>

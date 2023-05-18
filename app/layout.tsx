@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme='emerald'>
-      <body className={`${inter.className} max-w-screen overflow-x-hidden`}>
+      <body className={`${inter.className} w-screen overflow-x-hidden max-h-screen`}>
         <NavigationProvider />
         {children}
         {/* @ts-expect-error Async Server Component */}

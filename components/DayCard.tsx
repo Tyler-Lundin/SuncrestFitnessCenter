@@ -13,9 +13,9 @@ interface IDay {
 export default function DayCard({ day }: { day: IDay }) {
   const { hours, classes, day: day_label } = day
   return (
-    <div className='w-96 bg-base-100 p-4 border-black border-4 text-black rounded-2xl mx-auto shadow-lg dark:shadow-none'>
+    <div className='w-full max-w-sm bg-base-100 p-4 border-black border-2 text-black rounded-2xl mx-auto shadow-lg dark:shadow-none'>
       <div className='grid relative border-b border-black'>
-        <h1 className='text-3xl font-bold '>{day_label}</h1>
+        <h1 className='text-2xl font-bold '>{day_label}</h1>
         <h4 className='text-md font-bold'> {hours}</h4>
       </div>
       <Classes classes={classes} />

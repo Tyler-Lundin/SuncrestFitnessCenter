@@ -5,7 +5,7 @@ const Page = ({ children }: { children: React.ReactNode }) => (
       backgroundSize: '28px 28px',
       backgroundPosition: '0 0, 14px 14px',
     }}
-    className='w-screen min-h-screen pt-16 bg-base-300'>
+    className='w-screen overflow-x-hidden min-h-screen pt-16 bg-base-300'>
     {children}
   </main>
 )

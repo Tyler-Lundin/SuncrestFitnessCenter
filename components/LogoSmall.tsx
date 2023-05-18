@@ -7,8 +7,8 @@ const RS = Roboto_Serif({ subsets: ['latin'] });
 
 export default function LogoSmall() {
   return (
-    <Link href='/' className='flex gap-2 h-8'>
-      <LogoSVG className={'h-8 w-fit justify-self-end self-center'} />
+    <Link aria-label="Home Link as Logo for Mobile" href='/' className='flex gap-2 h-8 w-min'>
+      <LogoSVG className={'h-8 justify-self-end self-center w-8'} />
       <h6 className={`self-center text-lg h-min ${RS.className}`}>SFC</h6>
     </Link>
   );

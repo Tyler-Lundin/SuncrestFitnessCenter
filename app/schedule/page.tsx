@@ -28,7 +28,7 @@ export default function SchedulePage() {
       <div className='bg-black text-white'>
         <TitledContainer title='Schedule' subtitle='View our schedule and find the best fit for you.' />
       </div>
-      <div className='w-fit flex flex-wrap gap-4 content-around py-8 px-8 lg:px-16'>
+      <div className='w-fit flex flex-wrap gap-4 content-around py-8 px-2 md:px-8 lg:px-16'>
         {DAYS.map((day, index) => (
           <DayCard key={String(day.day + index)} day={day} />
         ))}

@@ -8,6 +8,7 @@ const Hero = () => {
   return (
     <div className="hero relative min-h-screen">
       <Image
+        aria-label="Hero Image of Deadlift Platform and Squat Rack"
         src="/images/gym/deadlift_platform.jpg"
         fill
         priority
