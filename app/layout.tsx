@@ -15,6 +15,7 @@ export default function RootLayout({
       <body className={`${inter.className} max-w-screen overflow-x-hidden`}>
         <NavigationProvider />
         {children}
+        {/* @ts-expect-error Async Server Component */}
         <Footer />
       </body>
     </html>
