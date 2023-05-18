@@ -17,6 +17,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { useState } from "react"
+import { Message } from "@prisma/client"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -42,7 +43,9 @@ export function DataTable<TData, TValue>({
   const handleSelectedAction = async (e: any) => {
     e.preventDefault();
     const action = e.target.name.split("-")[1]
-    const ids = table.getRowModel().rows.filter((row) => row.getIsSelected()).map((row) => row.original?.id)
+    const ids = table.getRowModel().rows
+      .filter((row) => row.getIsSelected())
+      .map((row: any) => row.original.id)
     if (ids.length === 0) return alert("No messages selected.")
     const confirmed = confirm(`Are you sure you want to ${action} ${ids.length} ${ids.length === 1 ? 'message' : 'messages'}?`)
     if (!confirmed) return
