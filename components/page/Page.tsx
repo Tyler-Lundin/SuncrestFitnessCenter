@@ -1,7 +1,7 @@
 const Page = ({ children }: { children: React.ReactNode }) => (
   <main
     style={{
-      backgroundImage: 'radial-gradient(#000000 0.7px, transparent 0.7px), radial-gradient(#000000 0.7px, #CFCFCF 0.7px)',
+      backgroundImage: 'radial-gradient(#3b3b3b 0.7px, transparent 0.7px), radial-gradient(#3b3b3b 0.7px, #CFCFCF 0.7px)',
       backgroundSize: '28px 28px',
       backgroundPosition: '0 0, 14px 14px',
     }}
