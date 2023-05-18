@@ -2,9 +2,16 @@ import AdditionalContactInfo from "@/components/AdditionalContactInfo";
 import ContactForm from "@/components/ContactForm";
 import TitledContainer from "@/components/TitledContainer";
 import Page from "@/components/page/Page";
+import { Metadata } from "next";
 
 
-const SUBTITLE = "Whether You're a Fitness Pro or a Beginner, We're Here to Help You Succeed"
+export const metadata: Metadata = {
+  title: 'SFC | Contact Us',
+  description: 'Whether You\'re a Fitness Pro or a Beginner, We\'re Here to Help You Succeed',
+}
+
+
+const SUBTITLE = "Whether You\'re a Fitness Pro or a Beginner, We\'re Here to Help You Succeed"
 
 export default function ContactPage() {
 

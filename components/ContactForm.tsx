@@ -1,22 +1,18 @@
 'use client';
 import { useForm } from "react-hook-form";
 import ReCAPTCHA from "react-google-recaptcha";
-import { createRef, useState } from "react";
+import { useState } from "react";
 
 const SITE_KEY: string = '6LcNUfUlAAAAAG81lv3NIl1D71W74CLuoq3kDzii'
 
 export default function ContactForm() {
 
-  const { register, handleSubmit, formState: { errors, isLoading, isSubmitting, isSubmitSuccessful } } = useForm();
+  const { register, handleSubmit, formState: { errors, isSubmitting, isSubmitSuccessful } } = useForm();
 
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const onChange = (token: string | null) => {
     setCaptchaToken(token);
-  }
-
-  const onError = () => {
-    alert('Please complete the captcha');
   }
 
   const onSubmit = async (data: any) => {

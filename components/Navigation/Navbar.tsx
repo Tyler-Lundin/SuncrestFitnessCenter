@@ -1,4 +1,5 @@
 'use client';
+import LogoFull from "../LogoFull";
 import LogoSmall from "../LogoSmall";
 import NavLinks from "./NavLinks";
 
@@ -9,7 +10,13 @@ const Navbar = ({ toggleNav }: { toggleNav: () => void }) => {
   return (
     <div className="w-full h-16 flex items-center px-2 md:px-4 lg:px-6 bg-base-100/70 backdrop-blur-md border-b border-black fixed z-50">
       <div className="flex-1 px-2 mx-auto ">
-        <LogoSmall />
+        <span className="md:hidden">
+          <LogoSmall />
+        </span>
+        <span className="hidden md:block">
+          <LogoFull />
+        </span>
+
       </div>
       <div className="flex-none hidden lg:block">
         <ul className="menu menu-horizontal flex gap-4 mr-4">

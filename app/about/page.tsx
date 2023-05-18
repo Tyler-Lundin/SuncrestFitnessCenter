@@ -1,8 +1,14 @@
-import ImageCarousel from "@/components/ImageCarousel"
 import TitledContainer from "@/components/TitledContainer"
 import Page from "@/components/page/Page"
+import { Metadata } from "next"
+import dynamic from "next/dynamic"
+const ImageCarousel = dynamic(() => import('@/components/ImageCarousel'))
 
 
+export const metadata: Metadata = {
+  title: 'SFC | About Us',
+  description: 'Suncrest Fitness Center and Phase 1 Physical Therapy are working together to help the community of Lake Spokane and Suncrest live life to the fullest.',
+}
 
 
 const paragraphs = [

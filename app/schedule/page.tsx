@@ -2,8 +2,12 @@ import DayCard from "@/components/DayCard";
 import TitledContainer from "@/components/TitledContainer";
 import Page from "@/components/page/Page";
 import { ForeverFit, Karate, FullBodyFitness_A, FullBodyFitness_B, ButtsAndGuts, Barre, Yoga } from "@/configs/classes"
+import { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: 'SFC | Schedule',
+  description: 'View our schedule and find the best fit for you.',
+}
 
 const DAYS = [
   { day: 'Sunday', hours: '09:00 AM - 05:00 PM', classes: [Yoga] },

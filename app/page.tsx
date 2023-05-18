@@ -1,10 +1,6 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import Page from '@/components/page/Page'
 import Hero from '@/components/Hero'
-import ImageCarousel from '@/components/ImageCarousel'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'SFC | Home',

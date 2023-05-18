@@ -5,7 +5,7 @@ import { BsGoogle } from "react-icons/bs";
 
 export function Signout() {
   return (
-    <button onClick={() => signOut()} className='font-light text-sm transition-all ease-in-out duration-300' key={`signout-link`}>  Sign Out </button>
+    <button onClick={() => signOut()} className='font-light hover:font-black text-red-500 text-sm transition-all ease-in-out duration-300' key={`signout-link`}>  Sign Out </button>
   )
 }
 
@@ -27,21 +27,31 @@ type formValues = {
 }
 
 export function SignInWithEmail() {
+  const { register, getValues, handleSubmit, formState: { errors, isLoading, isValid } } = useForm<formValues>()
 
-  const onSubmit: SubmitHandler<formValues> = async (data: any) => {
-    await signIn('email', { email: data.email })
+  const onSubmit: SubmitHandler<formValues> = async (data) => {
+    const { email } = data
+    try {
+      await signIn('email', { email })
+    } catch (error: any) {
+      console.log(error)
+      alert('Error signing in');
+    }
   }
 
-  const { register, handleSubmit, formState: { errors, isLoading, isSubmitSuccessful } } = useForm<formValues>()
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className='border-black border-4 font-light p-3 bg-base-200 rounded-md text-xl grid gap-4 justify-center transition-all ease-in-out duration-300' key={`signin-link`}>
+    <form
+      method='post'
+      onSubmit={handleSubmit(onSubmit)}
+      className='border-black border-4 font-light p-3 bg-base-200 rounded-md text-xl grid gap-4 justify-center transition-all ease-in-out duration-300' key={`signin-link`}>
       <label htmlFor='email' className='font-thin text-center'>Sign in with Email</label>
       {errors.email && (
         <span className='text-red-500 text-center'> Email Required </span>
       )}
       <input {...register("email", { required: true })} placeholder="email" className='p-3 rounded-md' />
-      <button type="submit">Sign In</button>
+      <button disabled={!isValid} className='btn-primary px-3 py-1 rounded-md disabled:opacity-70 transition-opacity' type="submit">Sign In</button>
     </form>
   )
 }
+

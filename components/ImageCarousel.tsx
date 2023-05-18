@@ -12,10 +12,12 @@ const images = [
   { src: 'yoga_room.jpg', title: 'Yoga' },
   { src: 'equipment.jpg', title: 'More Machines' },
   { src: 'squat_rack.jpg', title: 'Squat Rack' },
-  { src: 'smith_machine.jpg', title: 'Smith Machine' },
+  { src: 'smith_machine_2.jpg', title: 'Smith Machine' },
   { src: 'yoga_room_2.jpg', title: 'Boxing' },
   { src: 'equipment_2.jpg', title: 'More Dumbbells' },
   { src: 'yoga_room_4.jpg', title: 'Classes' },
+  { src: 'whiteboards.jpg', title: 'Refreshments' },
+  { src: 'racquetball_2.jpg', title: 'Racquetball' },
 ]
 
 const ImageCarousel = () => {
@@ -33,11 +35,10 @@ const ImageCarousel = () => {
             <Image
               priority={index === 0}
               fill
-              quality={50}
+              quality={1}
               style={{ objectFit: 'cover' }}
               alt={image.title}
               src={PATH + image.src}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         ))
@@ -48,7 +49,9 @@ const ImageCarousel = () => {
           <div key={`${image.title} ${index} slide`} className='overflow-hidden w-full h-[80vh] relative flex flex-col md:flex-row justify-center items-center py-3'>
             <Image
               priority={index === 0}
+              loading={index === 0 ? 'eager' : 'lazy'}
               fill
+              quality={5}
               style={{ objectFit: 'cover' }}
               alt={image.title}
               src={PATH + image.src}
@@ -58,6 +61,7 @@ const ImageCarousel = () => {
             <div className="w-full max-w-lg h-[80vh] relative flex">
               <Image
                 priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
                 fill
                 style={{ objectFit: 'cover' }}
                 alt={image.title}

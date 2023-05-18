@@ -2,6 +2,13 @@ import TitledContainer from "@/components/TitledContainer";
 import Page from "@/components/page/Page";
 import MEMBERSHIPS from '../../configs/memberships.config';
 import MembershipCard from "@/components/MembershipCard";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: 'SFC | Memberships',
+  description: 'Whether You\'re a Fitness Pro or a Beginner, We\'re Here to Help You Succeed',
+}
 
 const SUBTITLE = 'View our membership options and find the best fit for you.';
 
