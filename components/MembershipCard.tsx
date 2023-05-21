@@ -12,7 +12,7 @@ export default function MembershipCard({ membership }: { membership: IMembership
       <ul className='grid gap-2 h-max'>
         {membership.benefits.map((benefit, index) => (
           <li key={index + benefit} className={`${benefit === 'VOID' ? 'invisible' : 'visible'} flex gap-1 items-center`}>
-            <BsFillCheckCircleFill className='text-red-600' />{benefit}
+            <BsFillCheckCircleFill className='text-green-600' />{benefit}
           </li>
         ))}
       </ul>

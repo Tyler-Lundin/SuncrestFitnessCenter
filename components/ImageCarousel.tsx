@@ -16,7 +16,6 @@ const images = [
   { src: 'yoga_room_2.jpg', title: 'Boxing' },
   { src: 'equipment_2.jpg', title: 'More Dumbbells' },
   { src: 'yoga_room_4.jpg', title: 'Classes' },
-  { src: 'whiteboards.jpg', title: 'Refreshments' },
   { src: 'racquetball_2.jpg', title: 'Racquetball' },
 ]
 
@@ -33,6 +32,7 @@ const ImageCarousel = () => {
         images.map((image, index) => (
           <div key={`${image.title} ${index} thumb`} className="w-full h-20 relative">
             <Image
+              className="rounded-md"
               priority={index === 0}
               fill
               quality={1}
@@ -46,19 +46,9 @@ const ImageCarousel = () => {
     >
       {images.map((image, index) => {
         return (
-          <div key={`${image.title} ${index} slide`} className='overflow-hidden w-full h-[80vh] relative flex flex-col md:flex-row justify-center items-center py-3'>
-            <Image
-              priority={index === 0}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              fill
-              quality={5}
-              style={{ objectFit: 'cover' }}
-              alt={image.title}
-              src={PATH + image.src}
-              className='absolute opacity-20 scale-150 -z-10 blur-sm'
-              sizes="(max-width: 768px) 100vw"
-            />
-            <div className="w-full max-w-lg h-[80vh] relative flex">
+          <div key={`${image.title} ${index} slide`} className="overflow-hidden w-full h-[80vh] relative flex flex-col md:flex-row justify-center items-center py-3">
+
+            <div className="w-full h-[80vh]  relative flex">
               <Image
                 priority={index === 0}
                 loading={index === 0 ? 'eager' : 'lazy'}
@@ -69,7 +59,7 @@ const ImageCarousel = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-            <h1 className='text-white text-3xl lg:text-7xl lg:whitespace-normal mx-auto h-min w-min whitespace-nowrap font-bold p-4'>{image.title}</h1>
+            <h1 className="text-white text-3xl lg:text-7xl lg:whitespace-normal mx-auto h-min w-min whitespace-nowrap font-bold p-4">{image.title}</h1>
           </div>
         )
       })}
@@ -78,3 +68,15 @@ const ImageCarousel = () => {
 }
 
 export default ImageCarousel;
+
+            // <Image
+            //   priority={index === 0}
+            //   loading={index === 0 ? 'eager' : 'lazy'}
+            //   fill
+            //   quality={5}
+            //   style={{ objectFit: 'cover' }}
+            //   alt={image.title}
+            //   src={PATH + image.src}
+            //   className="absolute opacity-20 scale-150 -z-10 blur-sm"
+            //   sizes="(max-width: 768px) 100vw"
+            // />

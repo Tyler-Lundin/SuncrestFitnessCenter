@@ -16,7 +16,12 @@ export default function NavLinks() {
   const [_, setIsNavOpen] = useAtom(isNavOpenAtom)
   const closeNav = () => setIsNavOpen(false)
   const pathname = usePathname()
-  console.log(pathname)
+  const isCurrentPath = (href: string) => {
+    if (href === '/' && pathname === '/') return true
+    if (href === '/') return false
+    return pathname.startsWith(href)
+  }
+
   return (
     <>
       {
@@ -24,7 +29,7 @@ export default function NavLinks() {
           <Link
             tabIndex={0}
             onClick={closeNav}
-            className={`${link.href === '/' ? 'hover:font-black font-light' : pathname.startsWith(link.href) ? 'font-black hover:font-light' : 'hover:font-black font-light'} text-xl transition-all ease-in-out duration-300 `}
+            className={`${isCurrentPath(link.href) ? 'font-black hover:font-light' : 'hover:font-black font-light'} text-xl transition-all ease-in-out duration-300 `}
             key={`${link.label}-link`} href={link.href}
           >  {link.label} </Link>
         ))

@@ -2,6 +2,7 @@ import TitledContainer from "@/components/TitledContainer"
 import Page from "@/components/page/Page"
 import { Metadata } from "next"
 import dynamic from "next/dynamic"
+import Image from "next/image"
 const ImageCarousel = dynamic(() => import('@/components/ImageCarousel'))
 
 
@@ -18,6 +19,14 @@ const paragraphs = [
   'We are a family owned and operated business and we are proud to be a part of the Suncrest community. We are committed to providing the highest quality of care and service to our patients and club members.',
 ]
 
+const PATH = '/images/old/'
+const oldPhotos = [
+  { src: 'outside.jpeg', title: 'Outdoor Activities' },
+  { src: 'yoga.jpeg', title: 'Yoga Class' },
+  { src: 'group.jpeg', title: 'Group Photo' },
+]
+
+
 export default function AboutPage() {
 
 
@@ -25,11 +34,26 @@ export default function AboutPage() {
     <Page>
       <ImageCarousel />
       <TitledContainer title='About Us' />
-      <div className='grid gap-4 w-fit px-6 lg:px-16 pb-16 max-w-2xl'>
+      <div className='grid gap-4 w-fit px-8 lg:px-16 pb-16 '>
         {paragraphs.map((paragraph, index) => (
           <p key={index} className={'text-black font-light text-md sm:text-xl  '}>
             {paragraph}
           </p>
+        ))}
+      </div>
+      <div className='w-screen flex p-8 flex-wrap place-content-center gap-8 bg-black'>
+        {oldPhotos.map((image, index) => (
+          <Image
+            key={image.title}
+            className="rounded-md"
+            priority={index === 0}
+            quality={100}
+            width={400}
+            height={400}
+            style={{ objectFit: 'cover' }}
+            alt={image.title}
+            src={PATH + image.src}
+          />
         ))}
       </div>
     </Page>
