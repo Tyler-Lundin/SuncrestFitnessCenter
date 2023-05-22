@@ -40,3 +40,11 @@ export const Yoga = {
   instructors: ['Teanna'],
 }
 
+
+export const InstructorColors: Record<string, string> = {
+  "Melonie": '#FFC1C1',
+  "Matt": '#FFE5B4',
+  "Laura": '#D9E5FF',
+  "Kerstin": '#8FBC8F',
+  "Teanna": '#D987FF',
+}

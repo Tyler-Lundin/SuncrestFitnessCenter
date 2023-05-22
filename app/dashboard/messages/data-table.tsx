@@ -74,8 +74,8 @@ export function DataTable<TData, TValue>({
     <div className="rounded-md border">
       <div className="flex justify-between items-center px-4 py-2 border-b">
         <div className="flex items-center space-x-2">
-          <button name="action-archive" disabled={table.getSelectedRowModel().rows.length === 0} className="btn btn-sm btn-secondary" onClick={handleSelectedAction}>Archive selected</button>
-          <button name="action-delete" disabled={table.getSelectedRowModel().rows.length === 0} className="btn btn-sm btn-error" onClick={handleSelectedAction}>Delete selected</button>
+          <button name="action-archive" disabled={table.getSelectedRowModel().rows.length === 0} className="btn btn-xs btn-secondary" onClick={handleSelectedAction}>Archive selected</button>
+          <button name="action-delete" disabled={table.getSelectedRowModel().rows.length === 0} className="btn btn-xs btn-error" onClick={handleSelectedAction}>Delete selected</button>
         </div>
       </div>
 
