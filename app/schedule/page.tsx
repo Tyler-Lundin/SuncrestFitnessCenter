@@ -28,7 +28,7 @@ export default function SchedulePage() {
       <div className="bg-black text-white">
         <TitledContainer title="Schedule" subtitle="View our schedule and find the best fit for you." />
       </div>
-      <div className="flex flex-wrap justify-center gap-4 py-4 px-2 md:px-8 lg:px-16">
+      <div className="flex flex-wrap justify-center gap-4 py-4 px-8 lg:px-16">
         {Object.keys(InstructorColors).map((instructor, index) => (
           <div key={String(instructor + index)} className="flex flex-col justify-center items-center">
             <div className="w-8 h-8 md:w-16 md:h-16 border border-black rounded-full" style={{ background: InstructorColors[instructor] }} />
