@@ -13,7 +13,7 @@ export default async function Footer() {
 
         <FooterLinks user={session?.user} />
         <p className="text-xs text-gray-300 ">
-          © {YEAR} Suncrest Fitness Center. <br /> All rights reserved.
+          © {YEAR} Sample Fitness Center. <br /> All rights reserved.
         </p>
         <p className="text-xs text-gray-400">
           Created with ♡ by <a href="https://www.tylerlundin.me" target="_blank" rel="noreferrer" >Tyler Lundin</a>

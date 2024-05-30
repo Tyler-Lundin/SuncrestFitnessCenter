@@ -20,9 +20,9 @@ const Hero = () => {
       <div className="hero-overlay bg-opacity-70 z-30" />
       <div className="hero-content text-center text-neutral-content z-30">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Suncrest Fitness Center</h1>
+          <h1 className="mb-5 text-5xl font-bold">Sample Fitness Center</h1>
           <p className="mb-5">
-            The Premiere fitness Club of South Stevens County
+            The Premiere fitness Club of Sample County
           </p>
           <Link href='/about' ><button className="btn z-50 btn-primary">Learn More</button> </Link>
         </div>

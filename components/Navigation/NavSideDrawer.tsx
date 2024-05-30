@@ -15,10 +15,10 @@ export default function NavSideDrawer({ isOpen, closeNav }: { isOpen: boolean, c
         <NavLinks />
         <div className="flex flex-col items-center justify-center gap-4 w-80 bg-base-200 menu absolute left-0 p-8 bottom-0">
           <div className="flex gap-4">
-            <a href="https://www.facebook.com/SuncresFitnessCenter" target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/SampleFitnessCenter" target="_blank" rel="noreferrer">
               <BsFacebook className="h-8 w-8" />
             </a>
-            <a href="https://www.instagram.com/suncrestfitnesscenter/" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/samplefitnesscenter/" target="_blank" rel="noreferrer">
               <BsInstagram className="h-8 w-8" />
             </a>
           </div>

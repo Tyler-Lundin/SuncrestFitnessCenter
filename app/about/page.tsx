@@ -8,15 +8,15 @@ const ImageCarousel = dynamic(() => import("@/components/ImageCarousel"))
 
 export const metadata: Metadata = {
   title: "SFC | About Us",
-  description: "Suncrest Fitness Center and Phase 1 Physical Therapy are working together to help the community of Lake Spokane and Suncrest live life to the fullest.",
+  description: "Sample Fitness Center and Phase 1 Physical Therapy are working together to help the community of Lake Spokane and Sample live life to the fullest.",
 }
 
 
 const paragraphs = [
-  "Suncrest Fitness Center and Phase 1 Physical Therapy are working together to help the community of Lake Spokane and Suncrest live life to the fullest.",
+  "Sample Fitness Center and Phase 1 Physical Therapy are working together to help the community of Lake Spokane and Sample live life to the fullest.",
   "With over 9780 sq. ft. of rehabilitation and exercise space and state-of-the-art cardio respiratory and strength training equipment, we have the capacity to help you achieve all of your health and fitness goals.",
   "Our team of physical therapists, personal trainers and assistants are committed to help our patients and club members achieve their desired goals and return to living stronger, healthier lives.",
-  "We are a family owned and operated business and we are proud to be a part of the Suncrest community. We are committed to providing the highest quality of care and service to our patients and club members.",
+  "We are a family owned and operated business and we are proud to be a part of the Sample community. We are committed to providing the highest quality of care and service to our patients and club members.",
 ]
 
 const PATH = "/images/old/"

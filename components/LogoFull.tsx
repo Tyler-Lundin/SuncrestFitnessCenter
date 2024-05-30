@@ -9,7 +9,7 @@ export default function LogoFull() {
   return (
     <Link aria-label="Home Link as Logo for Desktop" href='/' className='flex gap-2 h-8'>
       <LogoSVG className={'h-8 justify-self-end self-center w-8'} />
-      <h6 className={`self-center text-lg h-min ${RS.className}`}>Suncrest Fitness Center</h6>
+      <h6 className={`self-center text-lg h-min ${RS.className}`}>Sample Fitness Center</h6>
     </Link>
   );
 }
