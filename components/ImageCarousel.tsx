@@ -36,19 +36,21 @@ const images = [
 const ImageCarousel = () => {
   return (
     <Carousel
-      className="px-4 w-full bg-black lg:px-16"
+      className="py-0 px-8 w-full bg-black pointer-events-none lg:px-16"
       infiniteLoop
       autoPlay
-      swipeable
+      renderArrowNext={() => <></>}
+      renderArrowPrev={() => <></>}
+      showIndicators={false}
+      showStatus={false}
     >
       {images.map(({ src, title, desc }, index) => (
         <div
           key={index}
-          className={`flex flex-col md:flex-row justify-center items-center py-3 h-[75vh] ${index % 2 === 0 ? "" : "md:flex-row-reverse"}`}
+          className={`flex flex-col md:flex-row gap-3 justify-center items-center py-3 h-[75vh] ${index % 2 === 0 ? "" : "md:flex-row-reverse"}`}
         >
-          <div className="relative w-full h-[75vh]">
+          <div className="overflow-hidden relative w-full rounded-lg h-[75vh]">
             <Image
-              className="rounded-2xl"
               priority={index === 0}
               loading={index === 0 ? "eager" : "lazy"}
               fill

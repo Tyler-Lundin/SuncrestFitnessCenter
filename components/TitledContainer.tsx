@@ -21,11 +21,11 @@ export default function TitledContainer({
 }) {
   return (
     <div className="py-2 px-8 lg:px-16">
-      <span className="grid gap-8 justify-center items-center text-white sm:justify-start lg:flex">
+      <span className="grid gap-1 justify-center items-center text-white sm:justify-start md:gap-8 lg:flex">
         {title && (
           <h1
             style={bebasNeue.style}
-            className="text-xl font-bold text-center sm:text-2xl sm:text-left"
+            className="text-xl font-bold sm:text-2xl sm:text-left"
           >
             {title}
           </h1>
@@ -33,7 +33,7 @@ export default function TitledContainer({
         {subtitle && (
           <h2
             style={sil.style}
-            className="self-center max-w-md text-center sm:text-left md:whitespace-nowrap"
+            className="self-center max-w-md sm:text-left md:whitespace-nowrap"
           >
             {subtitle}
           </h2>

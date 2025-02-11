@@ -4,6 +4,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
 
 import { Bebas_Neue } from "next/font/google";
+import LogoSmall from "./LogoSmall";
 
 const bebasNeue = Bebas_Neue({
   weight: ["400"],
@@ -46,11 +47,14 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={`${isSubmitting && "animate-pulse"}`}
+      className={`${isSubmitting && "animate-pulse"} bg-base-100 p-4 rounded-lg`}
     >
-      <h1 style={bebasNeue.style} className="mb-2 border-b border-black">
-        Send a Message{" "}
-      </h1>
+      <span className="grid gap-2">
+        <LogoSmall />
+        <h1 style={bebasNeue.style} className="mb-2 border-b border-black">
+          Send a Message{" "}
+        </h1>
+      </span>
       <div className="grid gap-4">
         {errors.name ? (
           <span className="font-black text-red-500">Name is required</span>

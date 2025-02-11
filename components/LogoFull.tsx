@@ -1,9 +1,10 @@
 "use client";
 import LogoSVG from "../public/Logo.svg";
 import Link from "next/link";
-import { Roboto_Serif } from "next/font/google";
+import { Roboto_Serif, Bebas_Neue } from "next/font/google";
 
-const RS = Roboto_Serif({ subsets: ["latin"] });
+const RS_FONT = Roboto_Serif({ subsets: ["latin"] });
+const BN_FONT = Bebas_Neue({ subsets: ["latin"], weight: ["400"] });
 
 export default function LogoFull() {
   return (
@@ -13,9 +14,6 @@ export default function LogoFull() {
       className="flex gap-2 h-8"
     >
       <LogoSVG className={"h-8 justify-self-end self-center w-8"} />
-      <h6 className={`self-center text-lg h-min ${RS.className}`}>
-        Suncrest Fitness Center
-      </h6>
     </Link>
   );
 }
