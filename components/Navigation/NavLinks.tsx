@@ -19,7 +19,7 @@ const LINKS = [
   { href: "/schedule", label: "Schedule", icon: <AiFillCalendar /> },
 ];
 
-export default function NavLinks() {
+export default function NavLinks({ textOnly = false }: { textOnly?: boolean }) {
   const [_, setIsNavOpen] = useAtom(isNavOpenAtom);
   const closeNav = () => setIsNavOpen(false);
   const pathname = usePathname();
@@ -29,17 +29,36 @@ export default function NavLinks() {
     return pathname.startsWith(href);
   };
 
+  if (textOnly)
+    return (
+      <>
+        {LINKS.map((link) => (
+          <Link
+            tabIndex={0}
+            onClick={closeNav}
+            className={`${isCurrentPath(link.href)
+                ? "font-black hover:font-light "
+                : "hover:font-black font-light "
+              } text-xl transition-all ease-in-out duration-300 py-1 px-3 rounded-sm `}
+            key={`${link.label}-link`}
+            href={link.href}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </>
+    );
+
   return (
     <>
       {LINKS.map((link) => (
         <Link
           tabIndex={0}
           onClick={closeNav}
-          className={`${
-            isCurrentPath(link.href)
+          className={`${isCurrentPath(link.href)
               ? "font-black hover:font-light bg-black/75 text-white"
               : "hover:font-black font-light bg-white/75"
-          } text-xl transition-all ease-in-out duration-300 py-1 px-3 rounded-sm`}
+            } text-xl transition-all ease-in-out duration-300 py-1 px-3 rounded-sm`}
           key={`${link.label}-link`}
           href={link.href}
         >

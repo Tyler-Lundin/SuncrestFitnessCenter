@@ -6,7 +6,7 @@ import Image from "next/image";
 const ImageCarousel = dynamic(() => import("@/components/ImageCarousel"));
 
 import { Bebas_Neue } from "next/font/google";
-import LogoSmall from "@/components/LogoSmall";
+import Logo from "@/components/Logo";
 
 const bebasNeue = Bebas_Neue({
   weight: ["400"],
@@ -26,13 +26,6 @@ const paragraphs = [
   "We are a family owned and operated business and we are proud to be a part of the Suncrest community. We are committed to providing the highest quality of care and service to our patients and club members.",
 ];
 
-const PATH = "/images/old/";
-const oldPhotos = [
-  { src: "outside.jpeg", title: "Outdoor Activities" },
-  { src: "yoga.jpeg", title: "Yoga Class" },
-  { src: "group.jpeg", title: "Group Photo" },
-];
-
 export default function AboutPage() {
   // const [openImage,setOpenImage] = useState<number | null>(null)
   // function toggleImage(index:number){
@@ -44,25 +37,6 @@ export default function AboutPage() {
         <TitledContainer title="About Us" />
         <WhoAreWe />
         <ImageCarousel />
-        <hr className="w-full border-b-white/25 border-[1px]" />
-
-        <div className="flex flex-wrap gap-8 place-content-center p-8 w-screen bg-black">
-          {oldPhotos.map((image, index) => (
-            <Image
-              key={image.title}
-              className="rounded-md"
-              priority={index === 0}
-              quality={100}
-              width={150}
-              height={150}
-              style={{ objectFit: "cover" }}
-              alt={image.title}
-              src={PATH + image.src}
-            />
-          ))}
-        </div>
-
-        <hr className="w-full border-b-white/25 border-[1px]" />
       </div>
     </Page>
   );
@@ -71,16 +45,16 @@ export default function AboutPage() {
 function WhoAreWe() {
   return (
     <div className="grid gap-2 p-8 w-screen bg-white">
-      <LogoSmall />
-      <h1 style={bebasNeue.style} className="text-3xl font-bold">
-        Who Are We?
-      </h1>
+      <span className="grid place-content-center pb-4">
+        <Logo />
+      </span>
       <hr className="w-full bg-black h-[2px]" />
       {paragraphs.map((paragraph, index) => (
         <p key={index} className={"text-black font-light text-md sm:text-xl  "}>
           {paragraph}
         </p>
       ))}
+      <hr className="w-full bg-black h-[2px]" />
     </div>
   );
 }

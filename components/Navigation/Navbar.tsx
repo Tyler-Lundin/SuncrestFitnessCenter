@@ -1,31 +1,29 @@
 "use client";
-import LogoFull from "../LogoFull";
-import LogoSmall from "../LogoSmall";
+import Logo from "../Logo";
 import NavLinks from "./NavLinks";
-import { motion } from "framer-motion";
 
 const Navbar = ({ toggleNav }: { toggleNav: () => void }) => {
   return (
-    <div
+    <nav
       aria-label="Navigation Bar"
-      className="flex overflow-hidden absolute top-0 left-0 z-50 items-center w-screen h-16 bg-neutral-200/90 backdrop-blur-md invert"
+      className="flex overflow-hidden absolute top-0 left-0 z-50 items-center w-screen h-16 bg-white/90 backdrop-blur-md invert"
     >
+      <div className="w-screen h-16 bg-gradient-to-t via-transparent to-transparent translate-y-1/4 pointer-events-none from-black/20" />
       <div className="absolute left-6 top-1/2 -translate-y-1/2">
-        <LogoFull />
+        <Logo asLink={true} text={"SFC"} />
       </div>
-      <div className="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:visible">
+      <div className="hidden absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 md:block">
         <ul
           aria-label="Navigation Links Unordered List"
           className="flex gap-4 mr-4 menu menu-horizontal"
         >
-          <NavLinks />
+          <NavLinks textOnly />
         </ul>
       </div>
       <div className="absolute right-6 top-1/2 -translate-y-1/2 md:hidden">
         <OpenNavButton toggleNav={toggleNav} />
       </div>
-      <div className="w-screen h-16 bg-gradient-to-t via-transparent to-transparent translate-y-1/4 from-black/30" />
-    </div>
+    </nav>
   );
 };
 

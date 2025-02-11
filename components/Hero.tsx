@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { Bebas_Neue, Shadows_Into_Light } from "next/font/google";
+import { Bebas_Neue, Shadows_Into_Light, Roboto } from "next/font/google";
+import Logo from "./Logo";
+import Particles from "./Particles";
+
+const roboto = Roboto({
+  weight: ["400", "900"],
+  subsets: ["latin"],
+});
 
 const bebasNeue = Bebas_Neue({
   weight: ["400"],
@@ -35,27 +42,39 @@ export default Hero;
 
 function HeroOverlay() {
   return (
-    <div className="grid absolute top-0 right-0 bottom-0 left-0 z-40 place-content-center bg-red-600/75 backdrop-blur-sm">
-      <div className="grid justify-items-center place-content-center mb-16 max-w-md text-center md:text-left">
+    <div className="grid absolute top-0 right-0 bottom-0 left-0 z-40 place-content-center bg-gradient-to-tr from-black/95 via-black/75 to-red-400/75 backdrop-blur-sm">
+      <Particles className="grid overflow-hidden relative justify-items-center place-content-center p-4 text-center rounded-lg border md:text-center bg-black/20 border-red-500/25">
+        <span className="grid place-content-center invert">
+          <Logo asLink={false} />
+        </span>
         <h1
-          style={bebasNeue.style}
-          className="text-5xl font-bold whitespace-nowrap md:text-8xl"
+          style={roboto.style}
+          className="text-5xl font-black text-white whitespace-nowrap md:text-8xl"
         >
           Suncrest <br /> Fitness Center
         </h1>
-        <p style={sil.style} className="mb-5 md:text-2xl">
+        <p style={bebasNeue.style} className="mb-3 text-white md:text-3xl">
           The Premiere fitness Club of Stevens County
         </p>
-        <Link href="/about" className="w-full">
+        <Link href="/about" className="mb-3 w-full">
           <button
             style={bebasNeue.style}
-            className="flex z-50 gap-4 justify-between items-center py-2 px-8 w-full text-xl text-white rounded-lg md:text-4xl bg-black/75 group"
+            className="flex z-50 gap-4 items-center p-3 w-full text-xl tracking-wide text-white whitespace-nowrap rounded-lg transition-all duration-500 md:text-4xl hover:bg-red-600 bg-red-600/80 group"
           >
-            Learn More
-            <AiOutlineArrowRight className="transition-all group-hover:translate-x-4" />
+            Come Look Inside!
+            <span className="relative w-full h-full">
+              <AiOutlineArrowRight className="absolute left-0 top-1/2 transition-all duration-500 -translate-y-1/2 group-hover:left-full group-hover:-translate-x-full" />
+            </span>
           </button>
         </Link>
-      </div>
+      </Particles>
+
+      <Link
+        href="/login"
+        className="py-4 text-lg font-thin text-center text-white"
+      >
+        already a member? Login
+      </Link>
     </div>
   );
 }

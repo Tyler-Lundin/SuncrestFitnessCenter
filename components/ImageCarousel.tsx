@@ -33,44 +33,82 @@ const images = [
   { src: "racquetball_2.jpg", title: "Racquetball", desc: "Game on!" },
 ];
 
+const PATH_OLD = "/images/old/";
+const oldPhotos = [
+  {
+    src: "outside.jpeg",
+    title: "Outdoor Activities",
+    desc: "Join the fun!",
+  },
+  { src: "yoga.jpeg", title: "Yoga Class", desc: "Yoga classes available!" },
+  {
+    src: "group.jpeg",
+    title: "Group Photo",
+    desc: "Welcome to our community!",
+  },
+];
+
 const ImageCarousel = () => {
   return (
     <Carousel
-      className="py-0 px-8 w-full bg-black pointer-events-none lg:px-16"
+      className="py-0 px-8 w-full bg-black lg:px-16"
       infiniteLoop
       autoPlay
-      renderArrowNext={() => <></>}
-      renderArrowPrev={() => <></>}
-      showIndicators={false}
       showStatus={false}
     >
-      {images.map(({ src, title, desc }, index) => (
-        <div
-          key={index}
-          className={`flex flex-col md:flex-row gap-3 justify-center items-center py-3 h-[75vh] ${index % 2 === 0 ? "" : "md:flex-row-reverse"}`}
-        >
-          <div className="overflow-hidden relative w-full rounded-lg h-[75vh]">
-            <Image
-              priority={index === 0}
-              loading={index === 0 ? "eager" : "lazy"}
-              fill
-              style={{ objectFit: "cover" }}
-              alt={title}
-              src={PATH + src}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </div>
-          <div className="grid p-4 text-center md:p-16 md:text-left">
-            <h1
-              style={bebasNeue.style}
-              className="text-3xl font-bold text-white lg:text-7xl"
+      {[
+        ...images.map(({ src, title, desc }, index) => (
+          <div
+            key={index}
+            className={`flex flex-col md:flex-row gap-3 justify-center items-center py-3 h-[75vh] ${index % 2 === 0 ? "" : "md:flex-row-reverse"}`}
+          >
+            <div className="overflow-hidden relative w-full rounded-lg h-[50vh]">
+              <Image
+                priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
+                fill
+                style={{ objectFit: "cover" }}
+                alt={title}
+                src={PATH + src}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
+            <div
+              className={`grid p-4 text-center md:p-16 ${index % 2 === 0 ? "md:text-left" : "md:text-right"}`}
             >
-              {title}
-            </h1>
-            <p className="text-xl font-thin text-white lg:text-6xl">{desc}</p>
+              <h1
+                style={bebasNeue.style}
+                className="text-3xl font-bold text-white lg:text-7xl"
+              >
+                {title}
+              </h1>
+              <p className="text-xl font-thin text-white lg:text-6xl">{desc}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        )),
+        <div className={` py-3 h-[75vh] `}>
+          <div className="grid overflow-hidden relative gap-4 justify-center rounded-lg">
+            {oldPhotos.map((image, index) => (
+              <div className="flex gap-4 h-48">
+                <Image
+                  key={image.title}
+                  className="rounded-md"
+                  priority={index === 0}
+                  quality={100}
+                  width={150}
+                  height={150}
+                  style={{ objectFit: "cover" }}
+                  alt={image.title}
+                  src={PATH_OLD + image.src}
+                />
+                <p className="text-xl font-bold text-left text-white lg:text-6xl">
+                  {image.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>,
+      ]}
     </Carousel>
   );
 };

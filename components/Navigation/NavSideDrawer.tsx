@@ -1,7 +1,8 @@
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import NavLinks from "./NavLinks";
-import LogoSmall from "../LogoSmall";
+import Logo from "../Logo";
+import Particles from "../Particles";
 
 export default function NavSideDrawer({
   isOpen,
@@ -13,19 +14,22 @@ export default function NavSideDrawer({
   return (
     <div
       aria-label="navigation drawer"
-      className={`w-screen max-w-xs max-h-screen lg:hidden h-screen transition-all ease-in-out duration-300 fixed ${isOpen ? "left-0" : "-left-80"} z-50`}
+      className={`w-screen max-w-xs max-h-screen lg:hidden h-screen transition-all ease-in-out duration-300 fixed ${isOpen ? "left-0" : "-left-96"} z-50`}
     >
-      <ul className="flex relative flex-col gap-6 p-8 w-full h-full text-4xl bg-red-500/75 backdrop-blur-md menu">
-        <AiOutlineClose
-          className="absolute right-8 z-50 w-8 h-8 cursor-pointer"
-          onClick={closeNav}
-        />
+      <ul className="flex relative flex-col gap-6 p-8 w-full h-full text-4xl bg-black/75 backdrop-blur-md menu">
         <button disabled={!isOpen} onClick={closeNav}>
-          <LogoSmall />
+          <AiOutlineClose
+            className="absolute top-0 right-0 z-50 w-4 h-full text-white bg-red-700 rounded-r-md translate-x-full cursor-pointer"
+            onClick={closeNav}
+          />
         </button>
+        <Particles className="grid overflow-hidden relative place-content-center w-full h-24 bg-black rounded-full border border-white">
+          <div className="w-min invert">
+            <Logo />
+          </div>
+        </Particles>
         <NavLinks />
       </ul>
-      <BottomSubmenu />
     </div>
   );
 }

@@ -25,7 +25,7 @@ const ContactItem = ({
 
 export default function AdditionalContactInfo() {
   return (
-    <div className="p-2 mx-auto w-full max-w-4xl bg-red-500 rounded-lg md:rounded-lg md:border md:border-black">
+    <div className="p-2 mx-auto w-full max-w-4xl rounded-lg md:rounded-lg md:border md:border-black bg-white/75">
       <h1 style={bebasNeue.style} className="mb-2 border-b border-black">
         Reach out to us
       </h1>
