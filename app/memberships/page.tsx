@@ -11,13 +11,11 @@ export const metadata: Metadata = {
     "Whether You're a Fitness Pro or a Beginner, We're Here to Help You Succeed",
 };
 
-const SUBTITLE = "View our membership options and find the best fit for you.";
-
 export default function MembershipsPage() {
   return (
     <Page>
       <div className="text-white bg-black">
-        <TitledContainer title="Memberships" subtitle={SUBTITLE} />
+        <TitledContainer title="Memberships" />
       </div>
 
       <Particles className="w-full bg-black lg:px-16">

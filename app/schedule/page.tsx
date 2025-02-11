@@ -53,10 +53,7 @@ export default function SchedulePage() {
   return (
     <Page>
       <div className="text-white bg-black">
-        <TitledContainer
-          title="Schedule"
-          subtitle="View our schedule and find the best fit for you."
-        />
+        <TitledContainer title="Schedule" />
       </div>
       <Particles className="bg-black">
         <div className="flex flex-wrap gap-4 justify-center py-4 px-8 lg:px-16 bg-white/75">
