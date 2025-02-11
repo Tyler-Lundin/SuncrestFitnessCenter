@@ -60,7 +60,7 @@ const ImageCarousel = () => {
         ...images.map(({ src, title, desc }, index) => (
           <div
             key={index}
-            className={`flex flex-col md:flex-row gap-3 justify-center items-center py-3 h-[75vh] ${index % 2 === 0 ? "" : "md:flex-row-reverse"}`}
+            className={`flex flex-col md:flex-row gap-3 justify-center items-center p-8 h-[75vh] ${index % 2 === 0 ? "" : "md:flex-row-reverse"}`}
           >
             <div className="overflow-hidden relative w-full rounded-lg h-[50vh]">
               <Image
@@ -87,9 +87,9 @@ const ImageCarousel = () => {
           </div>
         )),
         <div className={` py-3 h-[75vh] `}>
-          <div className="grid overflow-hidden relative gap-4 justify-center rounded-lg">
+          <div className="grid overflow-hidden relative flex-wrap grid-cols-2 gap-4 justify-center items-center place-content-center rounded-lg">
             {oldPhotos.map((image, index) => (
-              <div className="flex gap-4 h-48">
+              <div className="flex gap-4">
                 <Image
                   key={image.title}
                   className="rounded-md"
@@ -101,9 +101,6 @@ const ImageCarousel = () => {
                   alt={image.title}
                   src={PATH_OLD + image.src}
                 />
-                <p className="text-xl font-bold text-left text-white lg:text-6xl">
-                  {image.desc}
-                </p>
               </div>
             ))}
           </div>

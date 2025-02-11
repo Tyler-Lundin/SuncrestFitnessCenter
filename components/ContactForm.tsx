@@ -11,7 +11,7 @@ const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
 });
 
-const SITE_KEY: string = "6Ld3LvUlAAAAABxQOoQgkDujmTIUVFmOEkGCZIZg";
+const SITE_KEY: string = "6LcNUfUlAAAAAG81lv3NIl1D71W74CLuoq3kDzii";
 
 export default function ContactForm() {
   const {
